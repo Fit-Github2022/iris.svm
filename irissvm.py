@@ -32,7 +32,7 @@ X_iris = iris.drop('species', axis=1)
 y_iris = iris['species']
 
 X_train, X_test, y_train, y_test = train_test_split(X_iris, y_iris, random_state = 0)
-clf = SVC(kernel='rbf', C=1).fit(x_train, y_train)
+clf = SVC(kernel='rbf', C=1).fit(X_train, y_train)
 print('Iris dataset')
 print('Accuracy of RBF SVC classifier on training set: {:.2f}'
      .format)
