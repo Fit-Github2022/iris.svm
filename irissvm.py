@@ -2,9 +2,9 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import seaborn as sns
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
-import seaborn as sns
 import matplotlib.pyplot as plt
 
 iris = sns.load_dataset('iris') # returns a pandas dataframe
@@ -31,14 +31,14 @@ from sklearn.model_selection import train_test_split
 X_iris = iris.drop('species', axis=1)  
 y_iris = iris['species']
 
-xtrain, xtest, ytrain, ytest = train_test_split(X_iris, y_iris, random_state = 0)
-clf = SVC(kernel='rbf', C=1).fit(xtrain, ytrain)
+X_train, X_test, y_train, y_test = train_test_split(X_iris, y_iris, random_state = 0)
+clf = SVC(kernel='rbf', C=1).fit(x_train, y_train)
 print('Iris dataset')
 print('Accuracy of RBF SVC classifier on training set: {:.2f}'
      .format)
 
 from sklearn.metrics import accuracy_score
-a=accuracy_score(ytest, y_model)
+a=accuracy_score(y_test, y_model)
 st.write(a)
 
 from sklearn.metrics import classification_report
