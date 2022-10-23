@@ -38,7 +38,7 @@ print('Accuracy of RBF SVC classifier on training set: {:.2f}'
      .format)
 
 from sklearn.metrics import accuracy_score
-a=accuracy_score(y_test, y_model)
+a = accuracy_score(y_test, y_model)
 st.write(a)
 
 from sklearn.metrics import classification_report
